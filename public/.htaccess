@@ -1,0 +1,30 @@
+#AuthType Basic
+#AuthName "Private zone. Only for administrator!"
+#AuthUserFile  /home/t/t95069dx/pdd247/public_html/public/.htpasswd
+#require valid-user
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes...
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    RewriteCond %{HTTP_HOST} ^www.pdd247.ru$ [NC]
+    RewriteRule ^(.*)$ https://pdd247.ru/$1 [R=301,L]
+  
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+    RewriteRule ^index\.php$ https://pdd247.ru/ [R=301,L]
+	
+</IfModule>
