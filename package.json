@@ -1,7 +1,15 @@
 {
-  "private": true,
-  "devDependencies": {
-    "gulp": "^3.8.8",
-    "laravel-elixir": "*"
-  }
+	"name": "pdd247",
+	"version": "1.0.1",
+	"description": "PDD247.RU",
+	"main": "index.js",
+	"script": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Alexander Afanasyev",
+	"license": "ISC",
+	"devDependencies": {
+		"gulp": "^3.9.1",
+		"gulp-csso": "^3.0.0"
+	}
 }

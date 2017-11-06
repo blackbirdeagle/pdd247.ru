@@ -1,16 +1,8 @@
-var elixir = require('laravel-elixir');
+var gulp = require('gulp');
+var csso = require('gulp-csso');
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Less
- | file for our application, as well as publishing vendor resources.
- |
- */
-
-elixir(function(mix) {
-    mix.less('app.less');
+gulp.task('csso', function () {
+    return gulp.src('public/css/style.css')
+        .pipe(csso())
+        .pipe(gulp.dest('public/static/css'));
 });

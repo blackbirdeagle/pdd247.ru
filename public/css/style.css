@@ -1,0 +1,510 @@
+@font-face{
+	font-family: 'CirceRegular';
+	src: url('../fonts/Circe-Regular.eot');
+	src: url('../fonts/Circe-Regular.eot?iefix') format('eot'),
+	url('../fonts/Circe-Regular.woff') format('woff'),
+	url('../fonts/Circe-Regular.ttf') format('truetype'),
+	url('../fonts/Circe-Regular.svg#webfont') format('svg');
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: CirceRegular;
+	text-shadow: none;
+}
+
+img{
+	border: none;	
+}
+
+input:focus, textarea:focus{
+	outline: none;
+}
+
+ul li{
+	margin-left: 20px;
+	font-size: 18px;
+}
+
+h1{
+
+}
+
+p{
+	margin-bottom: 0;
+	font-size: 18px;
+	text-indent: 20px;
+	text-align: justify;
+}
+
+.header{
+	padding: 20px 0;	
+}
+
+.logo img{
+	width: 100%;	
+}
+
+.voprosy{
+	overflow: hidden;
+	list-style: none;
+}
+
+.voprosy li{
+	float: left;
+	margin-bottom: 3px;
+	margin-left: 0px !important;
+}
+
+.voprosy li a{
+	display: block;
+	width: 32px;
+	height: 27px;
+	background-color: #7397da; 
+	margin-right: 3px;
+	text-align: center;
+	padding-top: 1px;
+	color: #fff;
+	text-decoration: none;
+	border: 1px solid #000;
+	pointer-events: none;
+}
+
+.voprosy li a.select{
+	background-color: #fff;
+	color: #000;
+}
+
+.voprosy li a.error{
+	background-color: #ff5129;
+	color: #fff;
+}
+
+.voprosy li a.correct{
+	background-color: rgba(29, 220, 16, 1);
+	color: #fff;
+}
+/*------------Экзаменационные вопросы-----------*/
+.exam_voprosy{
+	overflow: hidden;
+	list-style: none;
+}
+
+.exam_voprosy li{
+	float: left;
+	margin-bottom: 3px;
+	margin-left: 0px;
+}
+
+.exam_voprosy li a{
+	display: block;
+	width: 32px;
+	height: 27px;
+	background-color: #7397da; 
+	margin-right: 3px;
+	text-align: center;
+	padding-top: 3px;
+	color: #fff;
+	text-decoration: none;
+	border: 1px solid #000;
+	pointer-events: none;
+}
+
+.exam_voprosy li a.select{
+	background-color: #fff;
+	color: #000;
+}
+
+.exam_voprosy li a.error{
+	background-color: #ff5129;
+	color: #fff;
+}
+
+.exam_voprosy li a.correct{
+	background-color: rgba(29, 220, 16, 1);
+	color: #fff;
+}
+/*-----------------------------------------------*/
+.variants{
+	margin-left: 18px;	
+}
+
+.variants li{
+	cursor: pointer;
+	margin: 10px 0;
+	font-size: 18px;
+}
+
+.variants li span{
+	padding: 5px;
+	font-size: 18px;
+}
+
+.variants li.verno span{
+	background-color: rgba(29, 220, 16, 1);
+	color: #fff;
+	display: block;
+	width: 100%;
+}
+
+.variants li.neverno span{
+	background-color: #ff5129;
+	color: #fff;
+	display: block;
+	width: 100%;	
+}
+/*Варианты экзаменационного вопроса--------------*/
+.exam_variants{
+	margin-left: 18px;	
+}
+
+.exam_variants li{
+	cursor: pointer;
+	margin: 10px 0;
+}
+
+.exam_variants li span{
+	padding: 5px;
+	font-size: 18px;
+}
+
+.exam_variants li.verno span{
+	background-color: rgba(29, 220, 16, 1);
+	color: #fff;
+	display: block;
+	width: 100%;
+}
+
+.exam_variants li.neverno span{
+	background-color: #ff5129;
+	color: #fff;
+	display: block;
+	width: 100%;	
+}
+/*-----------------------------------------------*/
+.errors{
+	margin-left: 14px;
+	margin-top: 5px;
+}
+
+.errors li{
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.errors li span{
+	padding: 5px;
+	font-size: 18px;
+}
+
+.errors li.verno span{
+	background-color: rgba(29, 220, 16, 1);
+	color: #fff;
+	display: block;
+	width: 100%;
+}
+
+.errors li.neverno span{
+	background-color: #ff5129;
+	color: #fff;
+	display: block;
+	width: 100%;	
+}
+/*-----------------------------------------------*/
+.img_vopros img{
+	width: 100%;
+}
+
+.vopros_item{
+	margin-bottom: 40px;
+}
+
+.comment{
+	margin-top: 20px;	
+	background-color: #eee;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 18px;
+}
+
+.comment span{
+	background-color: #7397da;
+	color: #fff;
+	cursor: pointer;
+	padding: 3px;
+	border-radius: 3px;
+}
+
+.comment img{
+	height: 50px;
+	margin-bottom: 5px;
+}
+
+.c_errors{
+	margin-bottom: 10px;
+}
+
+.name_vopros{
+	margin-bottom: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.b_v{
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ff5129;
+	color: var(--red);
+	font-weight: bold;
+}
+
+.img_vopros{
+	border: 1px solid black;
+	padding: 3px;
+}
+
+.sidebar_menu{
+	list-style: none;
+}
+
+.sidebar_menu li a{
+	color: #fff;
+	background-color: #7397da;
+	display: block;
+	border-bottom: 1px solid #fff;
+	padding: 5px;
+	font-size: 16px;
+}
+
+.sidebar_menu li a:hover{
+	background-color: #999;
+	text-decoration: none;
+}
+
+.sidebar_menu li.active a{
+	background-color: #999;	
+}
+
+.queryLabel{
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+/*------------Стили контента правил-----------------*/
+.punkt_pravil{
+	border: 1px solid #999;
+	border-radius: 5px;
+	margin-bottom: 30px;
+	padding: 15px;
+	background: rgba(35, 82, 122, 0.09);
+}
+
+.punkt_pravil ul{
+	margin-left: 0px !important;
+}
+
+.punkt_pravil img{
+	height: 50px;
+}
+
+.punkt_pravil p{
+	margin-bottom: 20px;
+}
+
+.punkt_pravil table{
+	border: 1px solid #000;
+	width: 100%;
+}
+
+.punkt_pravil table tr{
+	border-bottom: 1px solid #000;
+}
+
+.punkt_pravil table tr td, .punkt_pravil table tr th{
+	padding: 10px;
+	font-size: 16px;
+}
+/*---------------------Попап-------------------------------*/
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    /*background: #fff;
+    opacity: 0.75;*/
+}
+
+.popup{
+	display: none;
+    width: 100%;
+    max-width: 800px;
+    top: 100px;
+    left: 100px;
+    background: #fff;
+    color: #fff;
+    z-index: 999;
+    position: fixed;
+    box-shadow: 0 8px 20px rgba(0,0,0,.4);
+    border: 3px solid #337ab7;
+    color: black;
+}
+
+.popup .close2 {
+    position: absolute;
+    top: -13px;
+    right: -13px;
+}
+
+.content_popup{
+	padding: 10px;
+	max-height: 400px;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.content_popup img{
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.mobile_menu_float{
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.mobile_menu_nv{
+	width: 190px !important;	
+}
+
+.menu_div{
+	margin-bottom: 10px;
+	border-bottom: 1px solid black;
+	padding: 10px;
+}
+
+.menu_div a{
+	display: block;	
+}
+
+.mobile_menu_float{
+	display: none;
+	width:150px;
+}
+
+.show_menu{
+	width: 50px;
+    display: none;
+	position:fixed;
+	right: 6px;
+	top: 6px;
+	z-index: 990;
+	border: 1px solid;
+}
+
+.show_menu img{
+	width: 100%;
+}
+
+.footer{
+	padding: 40px 0;
+}
+
+/*------------------Тематическая таблица--------------*/
+.price_table {
+    border: 1px solid #cecece;
+}
+
+.table_head {
+    background-color: #f3f3f3;
+}
+
+.table_col {
+    margin-right: 0;
+    margin-left: 0;
+    border-bottom: 1px solid #cecece;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.col_head {
+    font-weight: bold;
+    font-size: 16px;
+    color: #525252;
+}
+
+.cell_head {
+    font-size: 16px;
+    color: #525252;
+}
+
+.reload{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.75);	
+}
+
+.reload img{	
+	display: block;
+	position: fixed;
+}
+
+.udacha{
+	margin-top: 40px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+/*-----------------------------------------------------*/
+@media (min-width: 1200px){
+	
+}
+
+@media (max-width: 991px){
+	.sidebar_menu{
+		display: none;
+	}
+	
+	.mobile_menu_float{
+		display: block;
+	}
+	
+	.logo{
+		display: block;
+		width: 300px;
+		margin: 0 auto;
+	}
+	
+	.flash{
+		display: none;
+	}
+}
+
+@media (max-width: 767px){
+	.navbar-nav{
+		position: fixed;
+		top: 0;
+		left: -170px;
+		width: 170px;
+		bottom: 0;
+		background-color: #337ab7;
+		display: block;
+		z-index: 99;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		padding: 10px 0;
+	}
+	
+	.navbar-nav>li>a{
+		color: #fff;	
+	}
+	
+	.show_menu{
+		display: block;	
+	}
+	
+	.wrapper{
+		padding-top:6px;
+	}
+}
