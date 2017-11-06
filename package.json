@@ -9,6 +9,7 @@
 	"author": "Alexander Afanasyev",
 	"license": "ISC",
 	"devDependencies": {
+		"google-closure-compiler-js": "^20170910.0.1",
 		"gulp": "^3.9.1",
 		"gulp-csso": "^3.0.0"
 	}
