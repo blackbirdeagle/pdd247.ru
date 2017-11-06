@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var csso = require('gulp-csso');
 const compiler = require('google-closure-compiler-js').gulp();
+const image = require('gulp-image');
 
 gulp.task('csso', function () {
     return gulp.src('public/app/style.css')
@@ -18,4 +19,10 @@ gulp.task('goog', function() {
           create_source_map: true
         }))
       .pipe(gulp.dest('public/static/js/'));
+});
+
+gulp.task('image', function () {
+  gulp.src('public/images/**/*')
+    .pipe(image())
+    .pipe(gulp.dest('public/images/img/'));
 });
