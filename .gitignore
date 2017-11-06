@@ -1,1 +1,8 @@
 cgi-bin
+node_modules
+vendor
+bootstrap
+test
+storage
+config
+.env
