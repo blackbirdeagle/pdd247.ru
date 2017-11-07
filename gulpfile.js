@@ -1,7 +1,14 @@
 var gulp = require('gulp');
 var csso = require('gulp-csso');
+var concatCss = require('gulp-concat-css');
 const compiler = require('google-closure-compiler-js').gulp();
 const image = require('gulp-image');
+
+gulp.task('concat', function () {
+  return gulp.src('public/static/css/style.css')
+    .pipe(concatCss("style.min.css"))
+    .pipe(gulp.dest('public/static/css/'));
+});
 
 gulp.task('csso', function () {
     return gulp.src('public/app/style.css')
