@@ -9,21 +9,21 @@
 	@if($seo->keywords != "")
 		<meta name = "keywords" content = "{{$seo->keywords}}">
 	@else
-		<meta name = "keywords" content = "{{$seo->name}} — ПДД 2017 с изменениями от 25 июля 2017 года">
+		<meta name = "keywords" content = "{{$seo->name}} — ПДД 2017 с изменениями от 8 ноября 2017 года">
 	@endif
 
 	@if($seo->description != "")
 		<meta name = "description" content = "{{$seo->description}}">
 	@else
-		<meta name = "description" content = "{{$seo->name}} — ПДД 2017 с изменениями от 25 июля 2017 года">	
+		<meta name = "description" content = "{{$seo->name}} — ПДД 2017 с изменениями от 8 ноября 2017 года">	
 	@endif
 	
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	
 	@if($seo->name != "")
-		<title>{{$seo->name}} — ПДД 2017 с изменениями от 25 июля 2017 года</title>
+		<title>{{$seo->name}} — ПДД 2017 с изменениями от 8 ноября 2017 года</title>
 	@else
-		<title>ПДД 2017 с изменениями от 25 июля 2017 года</title>
+		<title>ПДД 2017 с изменениями от 8 ноября 2017 года</title>
 	@endif	
 </head>
 <body>
