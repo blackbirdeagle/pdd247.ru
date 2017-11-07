@@ -18,8 +18,6 @@
 		<meta name = "description" content = "{{$seo->name}} — ПДД 2017 с изменениями от 25 июля 2017 года">	
 	@endif
 	
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/style.css" rel="stylesheet">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	
 	@if($seo->name != "")

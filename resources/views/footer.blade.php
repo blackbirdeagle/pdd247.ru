@@ -11,9 +11,10 @@
         </div>
     </footer>
 
-	
-	<script type = "text/javascript" src = "/static/js/jquery.min.js"></script>
-	<script type = "text/javascript" src = "/static/js/bootstrap.min.js"></script>	
-	<script type = "text/javascript" src = "/static/js/script.min.js"></script>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/style.css" rel="stylesheet">	
+	<script async type = "text/javascript" src = "/static/js/jquery.min.js"></script>
+	<script async type = "text/javascript" src = "/static/js/bootstrap.min.js"></script>	
+	<script async type = "text/javascript" src = "/static/js/script.min.js"></script>
 </body>
 </html> 
