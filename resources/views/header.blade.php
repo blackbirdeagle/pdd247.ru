@@ -9,21 +9,21 @@
 	@if($seo->keywords != "")
 		<meta name = "keywords" content = "{{$seo->keywords}}">
 	@else
-		<meta name = "keywords" content = "{{$seo->name}} — ПДД 2017 с изменениями от 8 ноября 2017 года">
+		<meta name = "keywords" content = "{{$seo->name}} — ПДД 2018 с изменениями от 1 января 2018 года">
 	@endif
 
 	@if($seo->description != "")
 		<meta name = "description" content = "{{$seo->description}}">
 	@else
-		<meta name = "description" content = "{{$seo->name}} — ПДД 2017 с изменениями от 8 ноября 2017 года">	
+		<meta name = "description" content = "{{$seo->name}} — ПДД 2018 с изменениями от 1 января 2018 года">	
 	@endif
 	
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	
 	@if($seo->name != "")
-		<title>{{$seo->name}} — ПДД 2017 с изменениями от 8 ноября 2017 года</title>
+		<title>{{$seo->name}} — ПДД 2018 с изменениями от 1 января 2018 года</title>
 	@else
-		<title>ПДД 2017 с изменениями от 8 ноября 2017 года</title>
+		<title>ПДД 2018 с изменениями от 1 января 2018 года</title>
 	@endif	
 </head>
 <body>
@@ -92,7 +92,7 @@
 		<div class = "container">
 			<div class = "row"> 
 				<div class = "col-md-2">
-					<a class = "logo" href = "/"><img src = "/images/logo.png" alt = "ПДД 2017"/></a>
+					<a class = "logo" href = "/"><img src = "/images/logo.png" alt = "ПДД 2018"/></a>
 				</div>
 				<div class = "col-md-10">
 					<a class = "show_menu" href = "javascript:void(0);"><img src = "/images/mob_btn.png" /></a>	
@@ -102,7 +102,7 @@
 						<li><a href="/voprosy"><span>N-вопросы</span></a></li>						
 						<li><a href="/exam"><span>Экзамен</span></a></li>
 						<li><a href="/marafon"><span>Марафон</span></a></li>
-						<li><a href = "/pdd">ПДД 2017</a></li>	
+						<li><a href = "/pdd">ПДД 2018</a></li>	
 					</ul>
 				</div>	
 			</div>
