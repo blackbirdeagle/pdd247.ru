@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /result/
 Disallow: /resultexam/
 Disallow: /admin/
-Host: pdd247.ru
+Host: www.pdd247.ru

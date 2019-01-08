@@ -11,3 +11,5 @@ Admin::menu('\App\Pdd')->label('ПДД 2017 Темы')->icon('fa-bank');
 Admin::menu('\App\Listpunkt')->label('Список пунктов ПДД')->icon('fa-bank');
 Admin::menu('\App\Articles')->label('Статьи')->icon('fa-bank');
 Admin::menu('\App\Video')->label('Видео')->icon('fa-bank');
+Admin::menu('\App\Banners')->label('Баннеры')->icon('fa-bank');
+Admin::menu('\App\Comments')->label('Комментарии')->icon('fa-bank');

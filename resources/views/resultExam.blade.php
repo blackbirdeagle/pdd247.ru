@@ -50,6 +50,7 @@
 		</div>
 	</div>
 	<div class = "col-md-3">
+		<a class = "recent_changes " href = "/recent-changes">Последние изменения в ПДД</a>
 		<ol class = "sidebar_menu"> 
 			@foreach($menu as $item)
 				<li><a href = "/{{$slug}}/{{$item->id}}">{{$item->name}}</a></li>

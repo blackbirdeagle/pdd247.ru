@@ -10,11 +10,9 @@
             </div>
         </div>
     </footer>
-
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/style.css" rel="stylesheet">	
+	
 	<script type = "text/javascript" src = "/static/js/jquery.min.js"></script>
 	<script type = "text/javascript" src = "/static/js/bootstrap.min.js"></script>	
-	<script type = "text/javascript" src = "/static/js/script.min.js"></script>
+	<script type = "text/javascript" src = "/static/js/script.js"></script>
 </body>
 </html> 

@@ -1,5 +1,9 @@
 <?php
-
+/*
+* Copyright by Alexander Afanasyev
+* E-mail: blackbirdeagle@mail.ru
+* Skype: al_sidorenko1
+* */
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -48,6 +52,8 @@ Route::get('/ajaxContent', 'PddController@ajaxContent');
 Route::get('/ajaxdop', 'PddController@ajaxDop');
 Route::get('/errorCount', 'PddController@errorCount');
 //Route::get('home', 'HomeController@index');
+Route::get('/recent-changes', 'PddController@recentChanges');
+Route::get('/send-comment', 'PddController@sendComment');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

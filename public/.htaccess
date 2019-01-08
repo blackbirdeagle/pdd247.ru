@@ -18,8 +18,11 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
-    RewriteCond %{HTTP_HOST} ^www.pdd247.ru$ [NC]
-    RewriteRule ^(.*)$ https://pdd247.ru/$1 [R=301,L]
+    #RewriteCond %{HTTP_HOST} ^www.pdd247.ru$ [NC]
+    #RewriteRule ^(.*)$ https://pdd247.ru/$1 [R=301,L]
+
+	RewriteCond %{HTTP_HOST} ^pdd247.ru$ [NC]
+	RewriteRule ^(.*)$ https://www.pdd247.ru/$1 [R=301,L]	
   
     RewriteCond %{HTTPS} !=on
     RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]

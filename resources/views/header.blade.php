@@ -9,21 +9,24 @@
 	@if($seo->keywords != "")
 		<meta name = "keywords" content = "{{$seo->keywords}}">
 	@else
-		<meta name = "keywords" content = "{{$seo->name}} — ПДД 2018 с изменениями от 23 февраля 2018 года">
+		<meta name = "keywords" content = "{{$seo->name}}">
 	@endif
 
 	@if($seo->description != "")
 		<meta name = "description" content = "{{$seo->description}}">
 	@else
-		<meta name = "description" content = "{{$seo->name}} — ПДД 2018 с изменениями от 23 февраля 2018 года">	
+		<meta name = "description" content = "{{$seo->name}}">	
 	@endif
 	
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/style.css" rel="stylesheet">
 	
 	@if($seo->name != "")
-		<title>{{$seo->name}} — ПДД 2018 с изменениями от 23 февраля года</title>
+		<title>{{$seo->name}}</title>
 	@else
-		<title>ПДД 2018 с изменениями от 23 февраля 2018 года</title>
+		<title>ПДД 2018 с изменениями от 1 июля 2018 года</title>
 	@endif	
 </head>
 <body>
@@ -87,7 +90,7 @@
 	  <img src="//counter.rambler.ru/top100.cnt?pid=4504594" alt="Топ-100" />
 	</noscript>
 	<!-- END Top100 (Kraken) Counter -->
-	
+
 	<header class = "header">
 		<div class = "container">
 			<div class = "row"> 

@@ -20,12 +20,13 @@
         Верховного Суда РФ от 29 сентября 2011 г. №ГКПИ11-610)</p>
     </div>
     <div class = "col-md-3">
+		<a class = "recent_changes " href = "/recent-changes">Последние изменения в ПДД</a>
         <ol class = "sidebar_menu">
             @foreach($pdd as $them)
                 <li><a href = "/pdd/{{$them->seokey}}">{{$them->name}}</a></li>
             @endforeach    
         </ol>
-    </div>
+   </div>
 </div>
       
 @include('footer')

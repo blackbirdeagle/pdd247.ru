@@ -69,11 +69,12 @@
         </div>        
     </div>
 	<div class = "col-md-3">
+		<a class = "recent_changes " href = "/recent-changes">Последние изменения в ПДД</a>
 		<ol class = "sidebar_menu"> 
 			@foreach($bileti as $bilet)
 				<li><a href = "/bilety/{{$bilet->id}}">{{$bilet->name}}</a></li>
 			@endforeach	
-		</ol>				
+		</ol>		
 	</div> 
 </div>
     

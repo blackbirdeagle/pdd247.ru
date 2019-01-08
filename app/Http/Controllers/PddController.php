@@ -9,6 +9,8 @@ use App\Varianti;
 use App\Pdd;
 use App\Listpunkt;
 use App\Temy;
+use App\Banners;
+use App\Comments;
 
 class PddController extends Controller {
 
@@ -49,15 +51,18 @@ class PddController extends Controller {
 	public function nVoprosy(){
 		$page = Page::where('id_text', 'voprosy')->first();
 		$nv = Voprosi::where('bilet', 1)->orderBy('poradok', 'asc')->get();
-		
+		/*$banner = $this->getBanner();*/
 		$_SESSION["result"] = [];
 		$_SESSION["resultExam"] = [];
 		$_SESSION["type_menu"] = "";
 		
-		return view('nvoprosy', ['seo' => $page, 'nv' => $nv]);
+		return view('nvoprosy', ['seo' => $page, 'nv' => $nv/*, 'banner' => $banner*/]);
 	}
 	
 	public function nVopros($id){
+		/*$banner = $this->getBanner();*/
+		
+		$comments = $this->getComments();
 		
 		if($id > 0 && $id < 21){
 			$page = Bileti::where('id', $id)->orderBy('id', 'asc')->first();
@@ -85,7 +90,9 @@ class PddController extends Controller {
 				'id' => $id,
 				'voprosy' => $voprosy,
 				'variants' => $variants,
-				'queryLabel' => $queryLabel,				
+				'queryLabel' => $queryLabel,
+				/*'banner' => $banner,	*/
+				'comments' => $comments
 			]);
 		}else{
 			abort('404');
@@ -95,34 +102,47 @@ class PddController extends Controller {
 	public function tematic(){
 		$bileti = Bileti::orderBy('id', 'asc')->get();
 		$page = Page::where('id_text', 'tematic')->first();
+		/*$banner = $this->getBanner();*/
 		
-		return view('tematic', ['seo' => $page, 'bileti' => $bileti]);
+		return view('tematic', ['seo' => $page, 'bileti' => $bileti/*, 'banner' => $banner*/]);
 	}
 	/*----------Метод главной страницы--------------*/
 	public function index() {
 		$bileti = Bileti::orderBy('id', 'asc')->get();
 		$page = Page::where('id_text', 'index')->first();
+		/*$banner = $this->getBanner();*/
 		
-		return view('index', ['seo' => $page, 'bileti' => $bileti]);	
+		return view('index', ['seo' => $page, 'bileti' => $bileti/*, 'banner' => $banner*/]);	
 	}
+	
+	/*----------Метод Страницы с последними изменениями--------------*/
+	public function recentChanges() {
+		$bileti = Bileti::orderBy('id', 'asc')->get();
+		$page = Page::where('id_text', 'recent-changes')->first();
+		/*$banner = $this->getBanner();*/
+		
+		return view('recentсhanges', ['seo' => $page, 'bileti' => $bileti/*, 'banner' => $banner*/]);	
+	}	
 	
 	public function bilety() {
 		$bileti = Bileti::orderBy('id', 'asc')->get();
 		$page = Page::where('id_text', 'bilety')->first();
-		
+		/*$banner = $this->getBanner();*/
 		$_SESSION["result"] = [];
 		$_SESSION["resultExam"] = [];
 		$_SESSION["type_menu"] = ""; 
 		
 		return view('bilety', [
 			'seo' => $page,
-			'bileti' => $bileti
+			'bileti' => $bileti,
+			/*'banner' => $banner,*/
 		]);
 	}
 	
 	public function voprosy($id) {
 		$bilet = Bileti::where('id', $id)->orderBy('id', 'asc')->first();
-		
+		/*$banner = $this->getBanner();*/
+		$comments = $this->getComments();
 		if($bilet){
 			$bileti = Bileti::orderBy('id', 'asc')->get();
 			$voprosy = Voprosi::where('bilet', $id)->orderBy('poradok', 'asc')->get();
@@ -143,7 +163,9 @@ class PddController extends Controller {
 				'voprosy' => $voprosy,
 				'variants' => $variants,
 				'queryLabel' => "Билет ".$id." Вопрос 1",
-				'bil' => $id
+				'bil' => $id,
+				/*'banner' => $banner,*/
+				'comments' => $comments 
 			]);
 		}else{
 			abort('404');
@@ -260,6 +282,26 @@ class PddController extends Controller {
 		return $e_list;
 	}
 	
+	/*Закрытый метод получения 1-го баннера*/
+	private function getBanner(){
+		$banner = Banners::where('active', 1)->orderByRaw('RAND()')->first();
+		
+		return $banner;
+	}
+	
+	/*Закрытый метод получения комментариев*/
+	/**
+	 * @Параметры нет
+	 * @Возвращает 10 последних комментариев ввиде ассоциативного массива
+	 * @Автор Александр Афанасьев
+	 * @Copyright 2018 
+	 */
+	private function getComments(){
+		$comments = Comments::orderBy('id', 'desc')->take(10)->get();
+		
+		return $comments;
+	}
+	
 	/*Результат в билетах и темах*/
 	public function result(Request $request) {
 		
@@ -344,16 +386,17 @@ class PddController extends Controller {
 	public function pdd() {
 		$pdd = Pdd::orderBy('id', 'asc')->get();
 		$page = Page::where('id_text', 'pdd')->first();
-		
+		/*$banner = $this->getBanner();*/
 		return view('pdd', [
 			'seo' => $page,
-			'pdd' => $pdd
+			'pdd' => $pdd,
+			/*'banner' => $banner,*/
 		]);		
 	}
 	
 	public function pddThem($seokey, Request $request) {
 		$them = Pdd::where('seokey', $seokey)->first();
-		
+		/*$banner = $this->getBanner();*/
 		if($them){
 			$listpunkts = listpunkt::where('parent_id', $them->id)->orderby('id', 'asc')->get();
 			
@@ -366,7 +409,8 @@ class PddController extends Controller {
 				'them' => $them,
 				'listpunkt' => $listpunkts,
 				'pdd' => $pdd,
-				'seokey' => $url[4]
+				'seokey' => $url[4],
+				/*'banner' => $banner,*/
 			]);
 		}else{
 			abort('404');
@@ -378,22 +422,23 @@ class PddController extends Controller {
 	public function thems() {
 		$thems = Temy::orderBy('id', 'asc')->get();
 		$page = Page::where('id_text', 'temy')->first();
-		
+		/*$banner = $this->getBanner();*/
 		$_SESSION["result"] = [];
 		$_SESSION["resultExam"] = [];
 		$_SESSION["type_menu"] = "";
 		
 		return view('thems', [
 			'seo' => $page,
-			'thems' => $thems
+			'thems' => $thems,
+			/*'banner' => $banner,*/
 		]);
 	}
 	
 	/*--------Формирование вопросов темы и данных первого вопроса------------*/
 	public function them(Request $request, $id) {
-		
+		$comments = $this->getComments();
 		$page = Temy::where('id', $id)->first();
-		
+		/*$banner = $this->getBanner();*/
 		if($page){
 			$thems = Temy::orderBy('id', 'asc')->get();
 			/*Получаем все вопросы*/
@@ -424,7 +469,9 @@ class PddController extends Controller {
 				'voprosy' => $voprosy,
 				'variants' => $variants,
 				'queryLabel' => "Билет ".$id." Вопрос 1",
-				'id' => $url[4]
+				'id' => $url[4],
+				/*'banner' => $banner,*/
+				'comments' => $comments
 			]);
 		}else{
 			abort('404');
@@ -434,6 +481,8 @@ class PddController extends Controller {
 	/*--------Формирование списка вопросов экзамена и вывод данных первого вопроса---------*/
 	public function exam() {
 		$page = Page::where('id_text', 'exam')->first();
+		//$banner = $this->getBanner();
+		$comments = $this->getComments();
 		
 		$_SESSION["result"] = [];
 		$_SESSION["resultExam"] = [];
@@ -449,7 +498,7 @@ class PddController extends Controller {
 			break;
 		}
 		
-		return view('exam', ['seo' => $page, 'vopros' => $vopros, 'variants' => $variants]);
+		return view('exam', ['seo' => $page, 'vopros' => $vopros, 'variants' => $variants, /*'banner' => $banner,*/ 'comments' => $comments]);
 	}
 	
 	/*---------------------------МАРАФОН----------------------------*/
@@ -457,6 +506,8 @@ class PddController extends Controller {
 		$bileti = Bileti::orderBy('id', 'asc')->get();
 		$voprosy = Voprosi::orderByRaw('RAND()')->get();
 		$page = Page::where('id_text', 'marafon')->first();
+		//$banner = $this->getBanner();
+		$comments = $this->getComments();
 		
 		foreach($voprosy as $vopros){
 			$variants = Varianti::where('vopros', $vopros->id)->orderBy('id', 'asc')->get();
@@ -472,7 +523,9 @@ class PddController extends Controller {
 			'bileti' => $bileti,
 			'variants' => $variants,
 			'voprosy' => $voprosy,
-			'queryLabel' => 'Марафон по всем вопросам всех билетов ПДД 2017'
+			'queryLabel' => 'Марафон по всем вопросам всех билетов ПДД 2017',
+			/*'banner' => $banner,*/
+			'comments' => $comments
 		]);
 	}
 	/*--------------------------------------------------------------*/
@@ -498,4 +551,24 @@ class PddController extends Controller {
 		);
     }
 
+	/*--------------Фунекция добавляет в базу пользовательский комментарий-----------*/
+	/**
+	 * @Параметры отсутствуют
+	 * @Возвращает пустое значение
+	 * @Автор Александр Афанасьев
+	 * @Copyright 2018
+	 */
+	public function sendComment(){
+		$comment = new Comments;
+		
+		$comment->name = $_GET['NAME'];
+		$comment->city = $_GET['CITY'];
+		$comment->comment = $_GET['COMMENT'];
+		
+		if($comment->save()){
+			echo 1;
+		}else{
+			echo 0;
+		}
+	}
 }
